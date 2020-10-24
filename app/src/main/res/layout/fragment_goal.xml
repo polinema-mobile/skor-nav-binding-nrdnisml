@@ -6,7 +6,12 @@
 	>
 
 	<data>
-
+		<variable
+			name="fragment"
+			type="id.ac.polinema.skor.fragments.GoalFragment" />
+		<variable
+			name="goalScorer"
+			type="id.ac.polinema.skor.models.GoalScorer" />
 	</data>
 
 	<androidx.constraintlayout.widget.ConstraintLayout
@@ -66,6 +71,7 @@
 			android:layout_marginStart="8dp"
 			android:layout_marginEnd="8dp"
 			android:layout_marginBottom="8dp"
+			android:onClick="@{(v) -> fragment.onSaveClicked(v)}"
 			android:text="Save"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
@@ -78,6 +84,7 @@
 			android:layout_marginStart="8dp"
 			android:layout_marginEnd="8dp"
 			android:layout_marginBottom="8dp"
+			android:onClick="@{(v) -> fragment.onCancelClicked(v)}"
 			android:text="Cancel"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toStartOf="@+id/guideline3"
