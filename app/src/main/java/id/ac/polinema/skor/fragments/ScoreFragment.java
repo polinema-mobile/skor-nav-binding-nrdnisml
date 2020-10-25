@@ -31,7 +31,6 @@ public class ScoreFragment extends Fragment {
 
 	private List<GoalScorer> homeGoalScorerList;
 	private List<GoalScorer> awayGoalScorerList;
-	public List<String> home;
 
 	public ScoreFragment() {
 		// Required empty public constructor
@@ -42,7 +41,6 @@ public class ScoreFragment extends Fragment {
 		super.onCreate(savedInstanceState);
 		this.homeGoalScorerList = new ArrayList<>();
 		this.awayGoalScorerList = new ArrayList<>();
-		this.home = new ArrayList<>();
 	}
 
 	@Override
