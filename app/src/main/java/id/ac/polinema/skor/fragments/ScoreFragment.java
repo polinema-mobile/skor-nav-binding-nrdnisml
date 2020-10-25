@@ -27,9 +27,11 @@ public class ScoreFragment extends Fragment {
 	public static final String HOME_REQUEST_KEY = "home";
 	public static final String AWAY_REQUEST_KEY = "away";
 	public static final String SCORER_KEY = "scorer";
+	public String homeScorer,awayScorer;
 
 	private List<GoalScorer> homeGoalScorerList;
 	private List<GoalScorer> awayGoalScorerList;
+	public List<String> home;
 
 	public ScoreFragment() {
 		// Required empty public constructor
@@ -40,6 +42,7 @@ public class ScoreFragment extends Fragment {
 		super.onCreate(savedInstanceState);
 		this.homeGoalScorerList = new ArrayList<>();
 		this.awayGoalScorerList = new ArrayList<>();
+		this.home = new ArrayList<>();
 	}
 
 	@Override
@@ -54,6 +57,13 @@ public class ScoreFragment extends Fragment {
 			public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
 				GoalScorer goalScorer = result.getParcelable(SCORER_KEY);
 				homeGoalScorerList.add(goalScorer);
+				for(int i = 0; i < homeGoalScorerList.size(); i++){
+					if (i == 0){
+						homeScorer = homeGoalScorerList.get(i).getName()+" "+homeGoalScorerList.get(i).getMinute()+"\"  ";
+					}else{
+						homeScorer = homeScorer + homeGoalScorerList.get(i).getName()+" "+homeGoalScorerList.get(i).getMinute()+"\"  ";
+					}
+				}
 			}
 		});
 		getParentFragmentManager().setFragmentResultListener(AWAY_REQUEST_KEY, this, new FragmentResultListener() {
@@ -61,6 +71,13 @@ public class ScoreFragment extends Fragment {
 			public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
 				GoalScorer goalScorer = result.getParcelable(SCORER_KEY);
 				awayGoalScorerList.add(goalScorer);
+				for(int i = 0; i < awayGoalScorerList.size(); i++){
+					if (i == 0){
+						awayScorer = awayGoalScorerList.get(i).getName()+" "+awayGoalScorerList.get(i).getMinute()+"\"  ";
+					}else{
+						awayScorer = awayScorer + awayGoalScorerList.get(i).getName()+" "+awayGoalScorerList.get(i).getMinute()+"\"  ";
+					}
+				}
 			}
 		});
 		return binding.getRoot();
@@ -75,5 +92,4 @@ public class ScoreFragment extends Fragment {
 		ScoreFragmentDirections.GoalScorerAction action = ScoreFragmentDirections.goalScorerAction(AWAY_REQUEST_KEY);
 		Navigation.findNavController(view).navigate(action);
 	}
-
 }
