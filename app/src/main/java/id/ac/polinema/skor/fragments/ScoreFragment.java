@@ -57,9 +57,9 @@ public class ScoreFragment extends Fragment {
 				homeGoalScorerList.add(goalScorer);
 				for(int i = 0; i < homeGoalScorerList.size(); i++){
 					if (i == 0){
-						homeScorer = homeGoalScorerList.get(i).getName()+" "+homeGoalScorerList.get(i).getMinute()+"\"  ";
+						homeScorer = homeGoalScorerList.get(i).getName()+" "+homeGoalScorerList.get(i).getMinute()+"\" ";
 					}else{
-						homeScorer = homeScorer + homeGoalScorerList.get(i).getName()+" "+homeGoalScorerList.get(i).getMinute()+"\"  ";
+						homeScorer = homeScorer + homeGoalScorerList.get(i).getName()+" "+homeGoalScorerList.get(i).getMinute()+"\" ";
 					}
 				}
 			}
@@ -71,9 +71,9 @@ public class ScoreFragment extends Fragment {
 				awayGoalScorerList.add(goalScorer);
 				for(int i = 0; i < awayGoalScorerList.size(); i++){
 					if (i == 0){
-						awayScorer = awayGoalScorerList.get(i).getName()+" "+awayGoalScorerList.get(i).getMinute()+"\"  ";
+						awayScorer = awayGoalScorerList.get(i).getName()+" "+awayGoalScorerList.get(i).getMinute()+"\" ";
 					}else{
-						awayScorer = awayScorer + awayGoalScorerList.get(i).getName()+" "+awayGoalScorerList.get(i).getMinute()+"\"  ";
+						awayScorer = awayScorer + awayGoalScorerList.get(i).getName()+" "+awayGoalScorerList.get(i).getMinute()+"\" ";
 					}
 				}
 			}
